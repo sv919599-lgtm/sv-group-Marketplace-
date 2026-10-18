@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SV GROUP Marketplace</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff}
+header{background:#111;padding:20px;text-align:center;border-bottom:2px solid #d4af37}
+.logo{font-size:26px;font-weight:bold;color:#d4af37}
+header p{margin:7px 0 0;color:#ddd}
+.hero{padding:35px 18px;text-align:center;background:linear-gradient(145deg,#1b1605,#080808)}
+.hero h1{color:#ffe58a;font-size:29px}
+.hero p{color:#ddd;line-height:1.6}
+.btn{display:inline-block;padding:12px 18px;margin:6px;border:0;border-radius:8px;background:#d4af37;color:#111;font-weight:bold;text-decoration:none;cursor:pointer}
+section{padding:20px}
+h2{color:#ffe58a}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:#171717;border:1px solid #594719;border-radius:12px;padding:16px 10px;text-align:center}
+.card .emoji{font-size:35px}
+.card h3{color:#d4af37}
+.card p{font-size:13px;color:#ccc}
+input,button{font:inherit}
+input{width:100%;padding:12px;margin:7px 0;background:#222;color:white;border:1px solid #555;border-radius:7px}
+.panel{background:#151515;border:1px solid #594719;border-radius:12px;padding:16px}
+.small{color:#aaa;font-size:12px;line-height:1.6}
+footer{text-align:center;padding:22px;color:#aaa;border-top:1px solid #333}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">SV GROUP</div>
+  <p>Marketplace — सबकी दुकान, एक बाज़ार</p>
+</header>
+
+<div class="hero">
+  <h1>आपका अपना ऑनलाइन बाज़ार</h1>
+  <p>अलग-अलग दुकानों के उत्पाद एक ही जगह देखें।<br>दुकानदार भी अपनी दुकान शुरू कर सकते हैं।</p>
+  <a class="btn" href="#products">प्रोडक्ट देखें</a>
+  <a class="btn" href="#seller">अपनी दुकान खोलें</a>
+</div>
+
+<section id="products">
+  <h2>हमारे ब्रांड</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="emoji">🍬</div>
+      <h3>Sothaura Laddu</h3>
+      <p>मिठाई और खाद्य उत्पाद</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🏪</div>
+      <h3>SV Elite</h3>
+      <p>प्रीमियम उत्पाद</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🍽️</div>
+      <h3>SV Zayka</h3>
+      <p>खाने-पीने के उत्पाद</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🛍️</div>
+      <h3>अन्य दुकानें</h3>
+      <p>अनेक विक्रेता, अनेक उत्पाद</p>
+    </div>
+  </div>
+  <p class="small">SV Pan Masala जैसे विनियमित उत्पादों की बिक्री लागू कानूनों और आवश्यक अनुमतियों की जाँच के अधीन होगी।</p>
+</section>
+
+<section id="seller">
+  <h2>दुकानदार बनें</h2>
+  <div class="panel">
+    <p>अपनी दुकान शुरू करने में रुचि है? अपनी जानकारी भरें।</p>
+    <form id="sellerForm">
+      <input id="sellerName" placeholder="आपका नाम" required>
+      <input id="shopName" placeholder="दुकान का नाम" required>
+      <input id="phone" type="tel" inputmode="numeric" placeholder="मोबाइल नंबर" pattern="[0-9]{10}" required>
+      <input id="category" placeholder="कौन-से उत्पाद बेचेंगे?" required>
+      <button class="btn" type="submit">रुचि दर्ज करें</button>
+    </form>
+    <p id="message" aria-live="polite"></p>
+    <p class="small">यह अभी शुरुआती डिज़ाइन है। जानकारी इस पेज पर ही अस्थायी रूप से दिखेगी; सर्वर पर सेव नहीं होगी और यह वास्तविक रजिस्ट्रेशन नहीं है।</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 SV GROUP Marketplace<br>
+  सबकी दुकान, एक बाज़ार
+</footer>
+
+<script>
+document.getElementById("sellerForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const name=document.getElementById("sellerName").value.trim();
+  const shop=document.getElementById("shopName").value.trim();
+  const category=document.getElementById("category").value.trim();
+  document.getElementById("message").textContent=
+    "धन्यवाद "+name+"! आपकी "+shop+" दुकान की जानकारी इस डेमो में भरी गई है। श्रेणी: "+category+". अभी जानकारी सर्वर पर सेव नहीं हुई है।";
+});
+</script>
+</body>
+</html>
